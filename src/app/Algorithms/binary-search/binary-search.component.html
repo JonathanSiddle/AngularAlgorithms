@@ -1,0 +1,47 @@
+<h1>Binary Search</h1>
+<h2>Overview</h2>
+<p>
+  binary-search uses an ordered list, the search is made by starting at the middle of the list and splitting in half each time checking if the value is higher or lower than that tested.
+</p>
+<h2>Example</h2>
+<div>
+  <div>
+    Input a list of numbers separated by ';', pressing the generate button will generate a random list of 10 numbers. 
+  </div>
+  <div>
+    <mat-form-field>
+    <input matInput [(ngModel)]="this.inputListRaw" placeholder="List items" />  
+    </mat-form-field>
+    <button type="button" mat-raised-button color="accent" (click)="this.generateNums()">Generate</button>
+  </div>
+ <div>
+    <mat-form-field>
+    <input matInput [(ngModel)]="this.findItem" placeholder="Find Item" />  
+    </mat-form-field>
+    <button type="button" mat-raised-button color="accent" (click)="this.findItemInList()">Find</button>
+  </div>
+  <div>
+    Sorted List: {{ this.sortedList.join(';')}}
+    <div *ngIf="this.foundItem.length > 0">
+      Item Found! 
+    </div>
+    <div *ngIf="this.itemsChecked.length > 0">
+      Checked Items: {{ this.itemsChecked }}
+    </div>
+  </div>
+</div>
+<h2>
+  Items to check
+</h2>
+<div>
+  <div>Calculate the maximum number of items that need to be searched in a size of:</div>
+  <mat-form-field>
+   <input matInput [(ngModel)]="this.listSizeValue" placeholder="List size" class="numberOfItems"/>  
+  </mat-form-field>
+  <div>
+    <button type="button" mat-raised-button color="accent" (click)="this.clickedCalculate()">Calculate</button>
+  </div>
+  <div>
+    <span *ngIf="this.numberOfChecks.length > 0">Would take a maximum of {{ this.numberOfChecks }}</span>
+  </div>
+</div>

@@ -1,5 +1,18 @@
 # AngularAlgorithms
 
+Angular Algorithms is a project to demonstrate some of the fundamental Computer Science algorithms using TypeScript and Angular.
+
+Current To do:
+
+- [x] Implement Binary Search with demo
+- [ ] Create StackBlitz demo
+- [ ] Linked List
+- [ ] Quick sort
+- [ ] ????
+- [ ] ????
+- [ ] ????
+- [ ] ????
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
 
 ## Development server

@@ -1,14 +1,35 @@
+import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { BinarySearchComponent } from './Algorithms/binary-search/binary-search.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialImportsModule } from './material-imports.module';
+import { WelcomeComponent } from './welcome/welcome.component';
+
+const routes: Routes = [
+  {path: 'App/BinarySearch', component: BinarySearchComponent },
+  {path: 'App/Home', component: WelcomeComponent},
+  {path: '', redirectTo: 'App/Home', pathMatch: 'full'},
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    BinarySearchComponent,
+    HomeComponent,
+    WelcomeComponent,
   ],
   imports: [
-    BrowserModule
+    RouterModule.forRoot(routes),
+    FormsModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    MaterialImportsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

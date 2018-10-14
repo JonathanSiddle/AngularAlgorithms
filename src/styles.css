@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+html,body {    
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    height:100%;
+    font-family: Roboto, sans-serif;
+}
+
+/** Will style main component **/
+app-root {
+  display: flex;
+  flex-direction: column;
+  height:100%;
+  font-family: Roboto, sans-serif;
+}
+
+app-project-list {
+  height:100%;
+}
+md-sidenav {
+  width: 320px;
+}
+
+.my-content {
+}
+
+.tabContent {
+  padding: 2%;
+}
+
+.full-height {
+  height:100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.title {
+  margin-left:40px;
+}

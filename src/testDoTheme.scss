@@ -1,0 +1,41 @@
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$testDo-app-primaryDark: mat-palette($mat-gray, 800, 500, 100);
+// $elwynn-app-primaryDark: mat-palette($mat-gray, 700, 500, 100);
+$testDo-app-accentDark:  mat-palette($mat-blue, 700);
+
+$testDo-app-primaryLight: mat-palette($mat-blue, 700, 500, 100);
+$testDo-app-accentLight:  mat-palette($mat-grey, 700);
+// The warn palette is optional (defaults to red).
+$testDo-app-warn:    mat-palette($mat-red);
+// Create the theme object (a Sass map containing all of the palettes).
+
+$testDo-app-themeLight: mat-light-theme($testDo-app-primaryLight, $testDo-app-accentLight, $testDo-app-warn);
+$testDo-app-themeDark: mat-dark-theme($testDo-app-primaryDark, $testDo-app-accentDark, $testDo-app-warn);
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+//@include angular-material-theme($elwynn-app-themeDark);
+//@include angular-material-theme($elwynn-app-themeLight);
+
+a {
+    font-weight: bold;
+    color: mat-color($testDo-app-accentDark);
+}
+
+.light-theme {
+    @include angular-material-theme($testDo-app-themeLight);
+}
+
+.dark-theme {
+    @include angular-material-theme($testDo-app-themeDark);
+}

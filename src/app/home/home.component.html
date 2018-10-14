@@ -1,0 +1,31 @@
+<div class="main-wrapper">
+  <mat-toolbar color="primary" class="mat-elevation-z8" style="z-index: 100!important;">
+    <button type="button" mat-raised-button (click)="drawer.toggle();" color="accent">
+      <mat-icon aria-label="toggle icon">menu</mat-icon>
+    </button>
+    <h1 class="title" fxFlex="60">
+      Angular Algorithms
+    </h1>
+    <span class="spacer"></span>
+    <button mat-icon-button>
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="full-height">
+    <mat-sidenav #drawer class="sideNav" mode="push" opened="false">
+      <mat-nav-list>
+        <mat-list-item [routerLink]="['/App/Home']">
+          <h2 mat-line>Home</h2>
+        </mat-list-item>
+        <mat-list-item [routerLink]="['/App/BinarySearch']">
+          <h2 mat-line>Binary Search</h2>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="main-content">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
