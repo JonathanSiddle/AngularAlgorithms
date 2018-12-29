@@ -1,6 +1,6 @@
 # AngularAlgorithms
 
-Angular Algorithms is a project to demonstrate some of the fundamental Computer Science algorithms using TypeScript and Angular.
+Angular Algorithms is a project to demonstrate some of the fundamental Computer Science algorithms and data structures using TypeScript and Angular.
 
 Current To do:
 
