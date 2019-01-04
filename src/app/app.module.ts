@@ -1,3 +1,4 @@
+import { SelectionSortComponent } from './Algorithms/selection-sort/selection-sort.component';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -10,9 +11,12 @@ import { BinarySearchComponent } from './Algorithms/binary-search/binary-search.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialImportsModule } from './material-imports.module';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { MergeSortComponent } from './Algorithms/merge-sort/merge-sort.component';
 
 const routes: Routes = [
   {path: 'App/BinarySearch', component: BinarySearchComponent },
+  {path: 'App/SelectionSort', component: SelectionSortComponent },
+  {path: 'App/MergeSort', component: MergeSortComponent },
   {path: 'App/Home', component: WelcomeComponent},
   {path: '', redirectTo: 'App/Home', pathMatch: 'full'},
 ];
@@ -24,6 +28,8 @@ const routes: Routes = [
     BinarySearchComponent,
     HomeComponent,
     WelcomeComponent,
+    SelectionSortComponent,
+    MergeSortComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),

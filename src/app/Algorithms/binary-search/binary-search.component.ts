@@ -23,7 +23,7 @@ export class BinarySearchComponent implements OnInit {
   generateNums() {
     const nums = new Array<number>();
 
-    // generate 10 unique numbers 
+    // generate 10 unique numbers
     while (nums.length < 10) {
       const n = Math.floor(Math.random() * 255);
       if (nums.filter(number => number === n).length === 0) {

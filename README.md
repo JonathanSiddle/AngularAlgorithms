@@ -6,6 +6,7 @@ Current To do:
 
 - [x] Implement Binary Search with demo
 - [ ] Create StackBlitz demo
+- [ ] Selection Sort
 - [ ] Linked List
 - [ ] Quick sort
 - [ ] ????

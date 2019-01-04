@@ -1,0 +1,43 @@
+<h1>Selection Sort</h1>
+<p>
+  Selection Sort is one of the simplest sorting algorithms, the main issue with this algorithm is that it is slow!
+</p>
+
+<p>
+  View full source code here (error handling is kept to a minimum): 
+  <br/>
+  The algorithm can also be implemented with out creating a new list, 
+  this can found in the code with the method name: 'selectionSortInPlace'
+</p>
+
+<p>
+  The basic steps of the algorithm are as follows:
+</p>
+<ol>
+  <li>Take an unsorted list as input</li>
+  <li>Create a new empty list</li>
+  <li>Search unsorted list for smallest element</li>
+  <li>Add smallest element to new list</li>
+  <li>Remove smallest element from old list</li>
+</ol>
+
+<p>
+  Test Selection Sort below:
+</p>
+<div>
+  <mat-form-field>
+  <input matInput [(ngModel)]="this.inputListRaw" placeholder="List items" />  
+  </mat-form-field>
+  <button type="button" mat-raised-button color="accent" (click)="this.generateNums()">Generate</button>
+</div>
+<div>
+<div>
+  <button 
+  type="button" 
+  mat-raised-button 
+  color="accent"
+  (click)="this.sortInput()">Sort</button>
+</div>
+<div>
+  Sorted list: {{ this.sortedList }}
+</div>

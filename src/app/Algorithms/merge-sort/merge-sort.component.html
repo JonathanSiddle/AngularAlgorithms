@@ -1,0 +1,35 @@
+<h1>Merge Sort</h1>
+<p>
+ Merge Sort is a sorting algorithm that is much is faster then those such as selection sort, it executes in O(n log n) time.
+</p>
+<p>
+The algorithm involves dividing a list into individual elements and the elements into increasingly larger lists,
+the algorithm does not mutate the state of the original state of the list so elements of this algorithm could be 
+run in parallel.
+</p>
+<p>
+  This page gives a good example of Merge Sort in action: 
+  <br/>
+  The code that powers this page can be found here:
+</p>
+
+<p>
+  Test Merge Sort below:
+</p>
+<div>
+  <mat-form-field>
+  <input matInput [(ngModel)]="this.inputListRaw" placeholder="List items" />  
+  </mat-form-field>
+  <button type="button" mat-raised-button color="accent" (click)="this.generateNums()">Generate</button>
+</div>
+<div>
+<div>
+  <button 
+  type="button" 
+  mat-raised-button 
+  color="accent"
+  (click)="this.sortInput()">Sort</button>
+</div>
+<div>
+  Sorted list: {{ this.sortedList }}
+</div>
