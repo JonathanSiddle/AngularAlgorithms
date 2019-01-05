@@ -15,7 +15,7 @@ export class MergeSortComponent implements OnInit {
   ngOnInit() {
   }
 
-   generateNums() {
+  generateNums() {
     const nums = new Array<number>();
 
     // generate 10 unique numbers

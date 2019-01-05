@@ -1,0 +1,39 @@
+<h1>Bubble Sort</h1>
+<p>
+  Bubble Sort is relatively simple sorting algorithm, Bubble Sort iterates over a list 
+  comparing each item to the previous item. This process repeats until no more swaps are made,
+  meaning the list is sorted.
+</p>
+<p>
+  Bubble Sort Overview: 
+  <br/>
+  The code that powers this page can be found here:
+</p>
+
+<p>
+  Test Merge Sort below:
+</p>
+<div class="full-width">
+  <mat-form-field class="mw200">
+  <input matInput [(ngModel)]="this.inputListRaw" placeholder="List items" />  
+  </mat-form-field>
+  <button type="button" mat-raised-button color="accent" (click)="this.generateNums()">Generate</button>
+</div>
+<div class="ptop20">
+  <button 
+  type="button" 
+  mat-raised-button 
+  color="accent"
+  (click)="this.sortInput()">Sort</button>
+</div>
+
+<div class="ptop20 output">
+  Sorted list: {{ this.sortedList }}
+</div>
+
+<div class="ptop20">
+  Debug info: 
+  <div *ngFor="let line of this.debug">
+    <span [ngClass]="this.getDebugStyle(line)">{{ line }}</span> <br />
+  </div>
+</div>

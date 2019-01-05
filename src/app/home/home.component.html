@@ -18,8 +18,11 @@
         <mat-list-item [routerLink]="['/App/Home']">
           <h2 mat-line>Home</h2>
         </mat-list-item>
-        <mat-list-item [routerLink]="['/App/BinarySearch']">
-          <h2 mat-line>Binary Search</h2>
+
+        <h2 mat-line>Sorting Algorithms: </h2>
+
+        <mat-list-item [routerLink]="['/App/BubbleSort']">
+          <h2 mat-line>Bubble Sort</h2>
         </mat-list-item>
         <mat-list-item [routerLink]="['/App/SelectionSort']">
           <h2 mat-line>Selection Sort</h2>
@@ -27,9 +30,14 @@
         <mat-list-item [routerLink]="['/App/MergeSort']">
           <h2 mat-line>Merge Sort</h2>
         </mat-list-item>
+        
+        <h2 mat-line>Other:</h2>
+
+        <mat-list-item [routerLink]="['/App/BinarySearch']">
+          <h2 mat-line>Binary Search</h2>
+        </mat-list-item>
       </mat-nav-list>
     </mat-sidenav>
-
     <mat-sidenav-content class="main-content">
       <router-outlet></router-outlet>
     </mat-sidenav-content>

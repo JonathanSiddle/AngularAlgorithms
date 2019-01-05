@@ -43,3 +43,11 @@ md-sidenav {
 .title {
   margin-left:40px;
 }
+
+.mw200 {
+  min-width: 400px;
+}
+
+.ptop20 {
+  padding-top: 20px;
+}
