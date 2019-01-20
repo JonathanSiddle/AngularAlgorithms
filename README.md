@@ -4,13 +4,19 @@ Angular Algorithms is a project to demonstrate some of the fundamental Computer 
 
 Current To do:
 
-- [x] Implement Binary Search with demo
 - [ ] Create StackBlitz demo
-- [ ] Selection Sort
+
+Sorting Algorithms:
+
+- [x] Bubble Sort
+- [x] Selection Sort
+- [x] Merge Sort
+- [x] Quick Sort
+
+Other:
+
+- [x] Binary-Search
 - [ ] Linked List
-- [ ] Quick sort
-- [ ] ????
-- [ ] ????
 - [ ] ????
 - [ ] ????
 

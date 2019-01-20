@@ -20,6 +20,7 @@ export class BinarySearchComponent implements OnInit {
   ngOnInit() {
   }
 
+  // function will generate a random list of ints
   generateNums() {
     const nums = new Array<number>();
 
@@ -34,25 +35,13 @@ export class BinarySearchComponent implements OnInit {
     this.inputListRaw = nums.join(`;`);
   }
 
+  // wrapper method that executes the binary search
   findItemInList() {
     // convert string back into array and convert to numbers
     const items = this.inputListRaw.split(`;`).map(s => +s);
     this.sortedList = items.sort((a, b) => a - b);
 
     this.foundItem = this.binarySearch(+this.findItem, this.sortedList);
-  }
-
-  clickedCalculate() {
-    this.calculateMaximumNumberOfChecks(this.listSizeValue);
-  }
-
-  calculateMaximumNumberOfChecks(listSize: string) {
-    this.numberOfChecks = this.getBaseLog(2, +listSize);
-  }
-
-  getBaseLog(x: number, y: number): string {
-    const n = Math.log(y) / Math.log(x);
-    return Math.round(n).toString();
   }
 
   // This is where the fun happens!!
@@ -80,4 +69,19 @@ export class BinarySearchComponent implements OnInit {
 
     return ``;
   }
+
+  clickedCalculate() {
+    this.calculateMaximumNumberOfChecks(this.listSizeValue);
+  }
+
+  calculateMaximumNumberOfChecks(listSize: string) {
+    this.numberOfChecks = this.getBaseLog(2, +listSize);
+  }
+
+  getBaseLog(x: number, y: number): string {
+    const n = Math.log(y) / Math.log(x);
+    return Math.round(n).toString();
+  }
+
+
 }

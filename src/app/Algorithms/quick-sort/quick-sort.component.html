@@ -1,15 +1,16 @@
-<h1>Merge Sort</h1>
+<h1>Quick Sort</h1>
 <p>
- Merge Sort is a sorting algorithm that is much is faster then those such as selection sort, it executes in O(n log n) time.
-</p>
-<p>
-The algorithm involves dividing a list into individual elements and the elements into increasingly larger lists,
-the algorithm does not mutate the state of the original state of the list so elements of this algorithm could be 
-run in parallel.
+  Quicksort involves selecting an item in the list (the pivot) in this implementation the last element of the list is seletect. 
+  The algorithm will find the correct position for the pivot, moving items lower to the left and items greater to the right, this is called partitioning.
+  Once the items have been partitioned, quicksort is called again with the items to the left of the pivot, then the right of the pivot.
 </p>
 
 <p>
-  Test Merge Sort below:
+  An example of quicksort in action can be found <a href="https://www.youtube.com/watch?v=ywWBy6J5gz8">here.</a>
+</p>
+
+<p>
+  Test Quick Sort below:
 </p>
 <div class="full-width">
   <mat-form-field class="mw400">

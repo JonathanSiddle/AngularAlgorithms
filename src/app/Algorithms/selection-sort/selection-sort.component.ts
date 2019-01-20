@@ -9,6 +9,7 @@ export class SelectionSortComponent implements OnInit {
 
   public inputListRaw = ``;
   public sortedList = '';
+  public debug = new Array<string>();
 
   constructor() { }
 
@@ -54,9 +55,13 @@ export class SelectionSortComponent implements OnInit {
 
   // version of the selection sort that does not create a new list
   selectionSortInPlace(list: Array<number>) {
+    this.debug = new Array<string>();
 
     const oldListLength = list.length;
+    let listPass = 0;
     for (let x = 0; x < oldListLength; x++) {
+      listPass += 1;
+      this.debug.push(`List Pass(${listPass}) input: ${list}`);
       let smallestIndex = x;
 
       for (let y = x + 1; y < oldListLength; y++) {
@@ -64,11 +69,19 @@ export class SelectionSortComponent implements OnInit {
           smallestIndex = y;
         }
       }
+      let swapDebug = `Smallest item: ${list[smallestIndex]}, `;
 
       // swap min index value with current value
+      if (smallestIndex !== x) {
+        swapDebug += `Swapping ${list[smallestIndex]} and ${list[x]}`;
+      } else {
+        swapDebug += `No Swap`;
+      }
+      this.debug.push(swapDebug);
       const temp = list[smallestIndex];
       list[smallestIndex] = list[x];
       list[x] = temp;
+      this.debug.push(`List Pass(${listPass}) output: ${list}`);
     }
   }
 
@@ -87,5 +100,19 @@ export class SelectionSortComponent implements OnInit {
     }
 
     return smallestIndex;
+  }
+
+  getDebugStyle(i: string): string {
+    let returnStyle = '';
+
+    if (i.includes(`input`)) {
+      returnStyle = `input`;
+    } else if (i.includes(`output`)) {
+      returnStyle = `output`;
+    } else if (i.includes(`Swap`)) {
+      returnStyle = `info`;
+    }
+
+    return returnStyle;
   }
 }

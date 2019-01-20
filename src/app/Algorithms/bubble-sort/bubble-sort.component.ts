@@ -77,7 +77,7 @@ export class BubbleSortComponent implements OnInit {
       returnStyle = `input`;
     } else if (i.includes(`output`)) {
       returnStyle = `output`;
-    } else if (i.includes(`Swaps`)) {
+    } else if (i.includes(`Swap`)) {
       returnStyle = `info`;
     }
 

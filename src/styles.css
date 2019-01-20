@@ -44,10 +44,22 @@ md-sidenav {
   margin-left:40px;
 }
 
-.mw200 {
+.mw400 {
   min-width: 400px;
 }
 
 .ptop20 {
   padding-top: 20px;
+}
+
+.input {
+  color: orange;
+}
+
+.output {
+  color: green;
+}
+
+.info {
+  color: red;
 }

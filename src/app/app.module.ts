@@ -13,12 +13,14 @@ import { MaterialImportsModule } from './material-imports.module';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { MergeSortComponent } from './Algorithms/merge-sort/merge-sort.component';
 import { BubbleSortComponent } from './Algorithms/bubble-sort/bubble-sort.component';
+import { QuickSortComponent } from './Algorithms/quick-sort/quick-sort.component';
 
 const routes: Routes = [
   {path: 'App/BinarySearch', component: BinarySearchComponent },
   {path: 'App/BubbleSort', component: BubbleSortComponent },
   {path: 'App/SelectionSort', component: SelectionSortComponent },
   {path: 'App/MergeSort', component: MergeSortComponent },
+  {path: 'App/QuickSort', component: QuickSortComponent },
   {path: 'App/Home', component: WelcomeComponent},
   {path: '', redirectTo: 'App/Home', pathMatch: 'full'},
 ];
@@ -28,11 +30,11 @@ const routes: Routes = [
     AppComponent,
     HomeComponent,
     BinarySearchComponent,
-    HomeComponent,
     WelcomeComponent,
     SelectionSortComponent,
     MergeSortComponent,
     BubbleSortComponent,
+    QuickSortComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),

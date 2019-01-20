@@ -9,6 +9,7 @@ export class MergeSortComponent implements OnInit {
 
   public inputListRaw = ``;
   public sortedList = '';
+  public debug = new Array<string>();
 
   constructor() { }
 
@@ -31,6 +32,7 @@ export class MergeSortComponent implements OnInit {
 
   // method called from Angular component that initiates the sorting
   sortInput() {
+    this.debug = new Array<string>();
     const list = this.inputListRaw.split(';').map(s => +s);
     // const newList = this.selectionSort(list);
     // this.sortedList = newList.join(';');
@@ -39,6 +41,7 @@ export class MergeSortComponent implements OnInit {
   }
 
   mergeSort(input: Array<number>): Array<number> {
+    this.debug.push(`Input: ${input}`);
     if (input.length <= 1) { return input; }
 
     // split list into two
@@ -55,6 +58,7 @@ export class MergeSortComponent implements OnInit {
     }
 
     // still > 2 elements in input so call merge sort again
+    this.debug.push(`Split input to: (left) ${l} | (right) ${r}`);
     const lSorted = this.mergeSort(l);
     const rSorted = this.mergeSort(r);
     return this.merge(lSorted, rSorted);
@@ -64,6 +68,7 @@ export class MergeSortComponent implements OnInit {
   merge(left: Array<number>, right: Array<number>): Array<number> {
     const result = new Array<number>();
 
+    this.debug.push(`Merging: (left) ${left} | (right) ${right}`);
     // keep going to both left and right have no elements
     while (left.length > 0 || right.length > 0) {
       // if both lists have > 0 keep check both for which
@@ -76,8 +81,6 @@ export class MergeSortComponent implements OnInit {
           result.push(right[0]);
           right.splice(0, 1);
         }
-        // could possibly rewrite checks below
-        // to just merge the rest of list with > 0
       } else if (left.length > 0) {
           result.push(left[0]);
           left.splice(0, 1);
@@ -87,6 +90,21 @@ export class MergeSortComponent implements OnInit {
       }
     }
 
+    this.debug.push(`Merged: ${result}`);
     return result;
+  }
+
+  getDebugStyle(i: string): string {
+    let returnStyle = '';
+
+    if (i.includes(`input`)) {
+      returnStyle = `input`;
+    } else if (i.includes(`output`)) {
+      returnStyle = `output`;
+    } else if (i.includes(`Merg`) || i.includes(`split`)) {
+      returnStyle = `info`;
+    }
+
+    return returnStyle;
   }
 }
