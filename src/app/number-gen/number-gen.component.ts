@@ -6,6 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./number-gen.component.css']
 })
 export class NumberGenComponent implements OnInit {
+  @Input() public itemCount = 10;
   @Input() public inputListRaw = ``;
   @Output() public inputListRawChange = new EventEmitter();
 
@@ -17,8 +18,8 @@ export class NumberGenComponent implements OnInit {
     const nums = new Array<number>();
 
     // generate 10 unique numbers
-    while (nums.length < 10) {
-      const n = Math.floor(Math.random() * 255);
+    while (nums.length < this.itemCount) {
+      const n = Math.floor(Math.random() * 500);
       if (nums.filter(number => number === n).length === 0) {
         nums.push(n);
       }

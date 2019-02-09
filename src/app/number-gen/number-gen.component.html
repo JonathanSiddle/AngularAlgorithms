@@ -1,4 +1,14 @@
 <div class="full-width">
+  <mat-form-field class="mw100">
+    <input
+      name="item-count"
+      id="item-count"
+      matInput
+      placeholder="No. Items"
+      [(ngModel)]="this.itemCount"
+    />
+  </mat-form-field>
+  <br />
   <mat-form-field class="mw400">
     <input matInput [(ngModel)]="this.inputListRaw" placeholder="List items" />
   </mat-form-field>
