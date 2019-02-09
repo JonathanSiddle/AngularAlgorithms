@@ -1,36 +1,34 @@
 <h1>Merge Sort</h1>
 <p>
- Merge Sort is a sorting algorithm that is much is faster then those such as selection sort, it executes in O(n log n) time.
+  Merge Sort is a sorting algorithm that is much is faster then those such as
+  selection sort, it executes in O(n log n) time.
 </p>
 <p>
-The algorithm involves dividing a list into individual elements and the elements into increasingly larger lists,
-the algorithm does not mutate the state of the original state of the list so elements of this algorithm could be 
-run in parallel.
+  The algorithm involves dividing a list into individual elements and the
+  elements into increasingly larger lists, the algorithm does not mutate the
+  state of the original state of the list so elements of this algorithm could be
+  run in parallel.
 </p>
 
 <p>
   Test Merge Sort below:
 </p>
-<div class="full-width">
-  <mat-form-field class="mw400">
-  <input matInput [(ngModel)]="this.inputListRaw" placeholder="List items" />  
-  </mat-form-field>
-  <button type="button" mat-raised-button color="accent" (click)="this.generateNums()">Generate</button>
-</div>
+<app-number-gen [(inputListRaw)]="this.inputListRaw"></app-number-gen>
 <div class="ptop20">
-  <button 
-  type="button" 
-  mat-raised-button 
-  color="accent"
-  (click)="this.sortInput()">Sort</button>
+  <button
+    type="button"
+    mat-raised-button
+    color="accent"
+    (click)="this.sortInput()"
+  >
+    Sort
+  </button>
 </div>
 
-<div class="ptop20 output">
-  Sorted list: {{ this.sortedList }}
-</div>
+<div class="ptop20 output">Sorted list: {{ this.sortedList }}</div>
 
 <div class="ptop20">
-  Debug info: 
+  Debug info:
   <div *ngFor="let line of this.debug">
     <span [ngClass]="this.getDebugStyle(line)">{{ line }}</span> <br />
   </div>

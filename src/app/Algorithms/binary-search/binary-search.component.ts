@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./binary-search.component.css']
 })
 export class BinarySearchComponent implements OnInit {
-
   public listSizeValue = ``;
   public numberOfChecks = ``;
   public inputListRaw = ``;
@@ -15,25 +14,11 @@ export class BinarySearchComponent implements OnInit {
   public itemsChecked = ``;
   public foundItem = ``;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   // function will generate a random list of ints
-  generateNums() {
-    const nums = new Array<number>();
-
-    // generate 10 unique numbers
-    while (nums.length < 10) {
-      const n = Math.floor(Math.random() * 255);
-      if (nums.filter(number => number === n).length === 0) {
-        nums.push(n);
-      }
-    }
-
-    this.inputListRaw = nums.join(`;`);
-  }
 
   // wrapper method that executes the binary search
   findItemInList() {
@@ -50,20 +35,22 @@ export class BinarySearchComponent implements OnInit {
     const itemsChecked = new Array<number>();
 
     let low = 0;
-    let high = listOfItems.length -1;
+    let high = listOfItems.length - 1;
 
-    while(low <= high) {
-      const mid = Math.round((low + high)/2);
+    while (low <= high) {
+      const mid = Math.round((low + high) / 2);
       const guess = listOfItems[mid];
 
       itemsChecked.push(guess);
       if (guess === itemToFind) {
-        this.itemsChecked = `${itemsChecked.join(` ; `)} - Checked ${itemsChecked.length} items`;
+        this.itemsChecked = `${itemsChecked.join(` ; `)} - Checked ${
+          itemsChecked.length
+        } items`;
         return guess.toString();
       } else if (guess > itemToFind) {
-        high = mid -1;
+        high = mid - 1;
       } else {
-        low = mid +1;
+        low = mid + 1;
       }
     }
 
@@ -82,6 +69,4 @@ export class BinarySearchComponent implements OnInit {
     const n = Math.log(y) / Math.log(x);
     return Math.round(n).toString();
   }
-
-
 }

@@ -7,29 +7,13 @@ import { debug } from 'util';
   styleUrls: ['./bubble-sort.component.css']
 })
 export class BubbleSortComponent implements OnInit {
-
   public inputListRaw = ``;
   public sortedList = '';
   public debug = new Array<string>();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
-  generateNums() {
-    const nums = new Array<number>();
-
-    // generate 10 unique numbers
-    while (nums.length < 10) {
-      const n = Math.floor(Math.random() * 255);
-      if (nums.filter(number => number === n).length === 0) {
-        nums.push(n);
-      }
-    }
-
-    this.inputListRaw = nums.join(`;`);
-  }
+  ngOnInit() {}
 
   // method called from Angular component that initiates the sorting
   sortInput() {
