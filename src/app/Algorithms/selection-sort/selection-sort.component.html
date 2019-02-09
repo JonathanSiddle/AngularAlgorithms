@@ -14,12 +14,8 @@
 <p>
   Test Selection Sort below:
 </p>
-<div class="full-width">
-  <mat-form-field class="mw400">
-  <input matInput [(ngModel)]="this.inputListRaw" placeholder="List items" />  
-  </mat-form-field>
-  <button type="button" mat-raised-button color="accent" (click)="this.generateNums()">Generate</button>
-</div>
+
+<app-number-gen [(inputListRaw)]="this.inputListRaw"></app-number-gen>
 <div class="ptop20">
   <button 
   type="button" 

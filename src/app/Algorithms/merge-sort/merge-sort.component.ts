@@ -6,29 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./merge-sort.component.css']
 })
 export class MergeSortComponent implements OnInit {
-
   public inputListRaw = ``;
   public sortedList = '';
   public debug = new Array<string>();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
-  generateNums() {
-    const nums = new Array<number>();
-
-    // generate 10 unique numbers
-    while (nums.length < 10) {
-      const n = Math.floor(Math.random() * 255);
-      if (nums.filter(number => number === n).length === 0) {
-        nums.push(n);
-      }
-    }
-
-    this.inputListRaw = nums.join(`;`);
-  }
+  ngOnInit() {}
 
   // method called from Angular component that initiates the sorting
   sortInput() {
@@ -42,7 +26,9 @@ export class MergeSortComponent implements OnInit {
 
   mergeSort(input: Array<number>): Array<number> {
     this.debug.push(`Input: ${input}`);
-    if (input.length <= 1) { return input; }
+    if (input.length <= 1) {
+      return input;
+    }
 
     // split list into two
     const mid = Math.round(input.length / 2);
@@ -82,11 +68,11 @@ export class MergeSortComponent implements OnInit {
           right.splice(0, 1);
         }
       } else if (left.length > 0) {
-          result.push(left[0]);
-          left.splice(0, 1);
+        result.push(left[0]);
+        left.splice(0, 1);
       } else if (right.length > 0) {
-          result.push(right[0]);
-          right.splice(0, 1);
+        result.push(right[0]);
+        right.splice(0, 1);
       }
     }
 
