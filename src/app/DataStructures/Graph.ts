@@ -1,15 +1,23 @@
 import { Node } from './Node';
 
+export enum DIRECTION {
+  DIRECTED = 1,
+  UNDIRECTED
+}
+
 export class Graph {
-  public UNDIRECTED = Symbol('undirected graph');
-  public DIRECTED = Symbol('directed graph');
   public nodes = new Map<any, Node>();
-  public edgeDirection = this.DIRECTED;
+  public edgeDirection = DIRECTION.DIRECTED;
+
+  constructor(direction: DIRECTION) {
+    this.edgeDirection = direction;
+  }
 
   addVertex(value): Node {
     if (this.nodes.has(value)) {
       return this.nodes.get(value);
     } else {
+      console.log(`Creating a new node`);
       const vertex = new Node(value);
       this.nodes.set(value, vertex);
       return vertex;
@@ -27,14 +35,14 @@ export class Graph {
     return this.nodes.delete(value);
   }
 
-  addEdge(source: Node, destination: Node) {
+  addEdge(source: any, destination: any) {
     const sourceNode = this.addVertex(source);
     const destinationNode = this.addVertex(destination);
 
     sourceNode.addAdjacent(destinationNode);
 
-    if (this.edgeDirection === this.UNDIRECTED) {
-      destination.addAdjacent(source);
+    if (this.edgeDirection === DIRECTION.UNDIRECTED) {
+      destinationNode.addAdjacent(sourceNode);
     }
 
     return [sourceNode, destinationNode];
@@ -47,11 +55,22 @@ export class Graph {
     if (sourceNode && destinationNode) {
       sourceNode.removeAdjacent(destinationNode);
 
-      if (this.edgeDirection === this.UNDIRECTED) {
+      if (this.edgeDirection === DIRECTION.UNDIRECTED) {
         destinationNode.removeAdjacent(sourceNode);
       }
     }
 
     return [sourceNode, destinationNode];
+  }
+
+  toString(): string {
+    let output = ``;
+
+    this.nodes.forEach((v, k) => {
+      const s = `${k}: Adjacents: ${v.toString()} \n`;
+      output += s;
+    });
+
+    return output;
   }
 }

@@ -19,4 +19,15 @@ export class Node {
   isAdjacent(node: Node) {
     return this.adjacents.indexOf(node) > -1;
   }
+
+  toString() {
+    let s = ``;
+
+    this.adjacents.forEach(n => {
+      s += n.value + `,`;
+    });
+    s = s.substring(0, s.length - 1); // * remove last ,
+
+    return s;
+  }
 }
