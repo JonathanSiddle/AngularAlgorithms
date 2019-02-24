@@ -63,14 +63,56 @@ export class Graph {
     return [sourceNode, destinationNode];
   }
 
-  toString(): string {
-    let output = ``;
+  *dfs(first: Node, searchFor: any) {
+    const visited = new Set();
+    const visitList = new Array<Node>();
+
+    visitList.push(first);
+
+    while (visitList.length !== 0) {
+      const node = visitList.pop();
+      if (node && !visited.has(node)) {
+        yield node;
+        visited.add(node);
+        if (node.value.toString() === searchFor.toString()) {
+          return;
+        }
+        node.adjacents.forEach(adj => {
+          visitList.push(adj);
+        });
+      }
+    }
+  }
+
+  *bfs(first: Node, searchFor: any) {
+    const visited = new Set();
+    const visitList = new Array<Node>();
+
+    visitList.push(first);
+
+    while (visitList.length !== 0) {
+      const node = visitList.shift();
+      if (node && !visited.has(node)) {
+        yield node;
+        visited.add(node);
+        if (node.value.toString() === searchFor.toString()) {
+          return;
+        }
+        node.adjacents.forEach(adj => {
+          visitList.push(adj);
+        });
+      }
+    }
+  }
+
+  toStringArray(): Array<string> {
+    const returnArray = new Array<string>();
 
     this.nodes.forEach((v, k) => {
-      const s = `${k}: Adjacents: ${v.toString()} \n`;
-      output += s;
+      const s = `${k}: Adjacents: ${v.toString()}`;
+      returnArray.push(s);
     });
 
-    return output;
+    return returnArray;
   }
 }

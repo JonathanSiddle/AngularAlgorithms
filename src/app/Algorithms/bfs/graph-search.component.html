@@ -1,0 +1,57 @@
+
+<h1>Breadth-First Search</h1>
+
+
+<div>
+  <mat-form-field class="mw400">
+    <input matInput [(ngModel)]="this.node1" placeholder="Node 1" />
+  </mat-form-field>
+  <mat-form-field class="mw400">
+    <input matInput [(ngModel)]="this.node2" placeholder="Node 2" />
+  </mat-form-field>
+  <button
+    type="button"
+    mat-raised-button
+    color="accent"
+    (click)="this.addNodes()"
+  >
+  Add Node
+  </button>
+</div>
+
+<div>
+  <h2>Current Graph</h2>
+  <div *ngFor="let s of this.graphOutput">
+    <span>{{ s }}</span> <br/>
+  </div>
+</div>
+
+<div>
+  <h2>Search</h2>
+  <mat-form-field class="mw400">
+    <input matInput [(ngModel)]="this.valueToSearch" placeholder="Value to find" />
+  </mat-form-field>
+  <button
+    type="button"
+    mat-raised-button
+    color="accent"
+    (click)="this.searchForValueBF()"
+  >
+  Search Breadth-First
+  </button>
+  <button
+    type="button"
+    mat-raised-button
+    color="accent"
+    (click)="this.searchForValueDF()"
+  >
+  Search Depth-First
+  </button>
+</div>
+
+<div>
+  <h2>Debug:</h2>
+  <div *ngFor="let line of this.debug">
+    <span>{{ line }}</span>
+  </div>
+</div>

@@ -15,11 +15,11 @@ import { MergeSortComponent } from './Algorithms/merge-sort/merge-sort.component
 import { BubbleSortComponent } from './Algorithms/bubble-sort/bubble-sort.component';
 import { QuickSortComponent } from './Algorithms/quick-sort/quick-sort.component';
 import { NumberGenComponent } from './number-gen/number-gen.component';
-import { BFSComponent } from './Algorithms/bfs/bfs.component';
+import { GraphSearchComponent } from './Algorithms/bfs/graph-search.component';
 
 const routes: Routes = [
   {path: 'App/BinarySearch', component: BinarySearchComponent },
-  {path: 'App/BFSearch', component: BFSComponent },
+  {path: 'App/GraphSearch', component: GraphSearchComponent },
   {path: 'App/BubbleSort', component: BubbleSortComponent },
   {path: 'App/SelectionSort', component: SelectionSortComponent },
   {path: 'App/MergeSort', component: MergeSortComponent },
@@ -39,7 +39,7 @@ const routes: Routes = [
     BubbleSortComponent,
     QuickSortComponent,
     NumberGenComponent,
-    BFSComponent,
+    GraphSearchComponent,
   ],
   exports: [NumberGenComponent],
   imports: [
